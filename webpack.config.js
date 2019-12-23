@@ -16,7 +16,7 @@ module.exports = {
 	},
 
 	entry: {
-		main: './src/index.ts',
+		index: './src/index.ts'
 	},
 
 	module: {
