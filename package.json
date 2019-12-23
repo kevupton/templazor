@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "My webpack project",
   "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "author": "Kevin Upton",
   "license": "MIT",
   "dependencies": {

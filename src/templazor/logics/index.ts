@@ -24,10 +24,10 @@ export function logics(lines: string[], scope: Scope) {
     }
 
     if (result) {
-      output += result.output + '\n';
+      output += result.output;
       lines = result.remainder;
     } else {
-      output += lines.shift() + '\n';
+      output += (output ? '\n' : '') + lines.shift();
     }
   }
 

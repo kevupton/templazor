@@ -31,7 +31,8 @@ export const ifLogic : Logic = (lines, scope) => {
   const linesIfTrue = lines.slice(1, endIfIndex);
   const remainder   = lines.slice(endIfIndex + 1);
 
-  const output      = ifStatementResult ? logics(linesIfTrue, scope) : '';
+  let output = ifStatementResult ? logics(linesIfTrue, scope) : '';
+  output += '\n';
 
   return {
     output,

@@ -38,7 +38,6 @@ export const forEachLogic : Logic = (lines, scope) => {
     throw new Error('@foreach requires an array. Key `' + arrayKey + '` is ' + typeof array);
   }
 
-  console.log(array);
   array.forEach((value, index) => {
 
     const newScope : ScopeObject = {};
@@ -49,12 +48,13 @@ export const forEachLogic : Logic = (lines, scope) => {
 
     scope.in(newScope);
 
-    output += logics(lines.slice(1, endIndex), scope) + '\n';
+    output += logics(lines.slice(1, endIndex), scope) + (index < array.length - 1 ? '\n' : '');
 
     scope.out();
   });
 
   const remainder = lines.slice(endIndex + 1);
+  output += '\n';
 
   return {
     output,
