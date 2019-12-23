@@ -6,6 +6,7 @@
   "typings": "dist/index.d.ts",
   "author": "Kevin Upton",
   "license": "MIT",
+  "repository": "https://github.com/kevupton/templazor",
   "dependencies": {
     "loader-utils": "^1.2.3"
   },
