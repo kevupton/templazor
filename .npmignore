@@ -2,3 +2,4 @@ src
 node_modules
 webpack.config.js
 tsconfig.json
+.idea
