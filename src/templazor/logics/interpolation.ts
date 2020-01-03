@@ -8,12 +8,15 @@ const HAS_BEGINNING = /#{([^}]*)$/;
 
 export const interpolationLogic: Logic = ([...lines], scope) => {
   let matches: RegExpMatchArray | null = null;
+  let hasInterpolation = false;
 
   do {
     while ((matches = IS_INTERPOLATION.exec(lines[0]))) {
       const match = matches[1];
 
       lines[0] = lines[0].replace(START + match + END, scope.execute(match));
+
+      hasInterpolation = true;
     }
 
     matches = HAS_BEGINNING.exec(lines[0]);
@@ -30,8 +33,12 @@ export const interpolationLogic: Logic = ([...lines], scope) => {
 
   } while(matches);
 
+  if (!hasInterpolation) {
+    return false;
+  }
+
   return {
-    output: lines[0],
+    output: lines[0] + '\n',
     remainder: lines.slice(1),
   }
 };
