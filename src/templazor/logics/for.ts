@@ -32,7 +32,7 @@ export const forEachLogic : Logic = (lines, scope) => {
     throw new Error('Missing a closing @endforeach statement');
   }
 
-  const array = scope.get(arrayKey);
+  const array = scope.execute(arrayKey);
 
   if (!Array.isArray(array)) {
     throw new Error('@foreach requires an array. Key `' + arrayKey + '` is ' + typeof array);
