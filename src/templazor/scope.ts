@@ -35,12 +35,11 @@ export class Scope {
     return this.activeScope[key];
   }
 
+  // @ts-ignore
   public execute(command: string) {
-    let scope = '';
-    Object.keys(this.activeScope).forEach(key => {
-      scope += `const ${key} = ${JSON.stringify(this.activeScope[key])};`
-    });
-
-    return eval(scope + command);
+    // @ts-ignore
+    with(this.activeScope) {
+      return eval(command);
+    }
   }
 }

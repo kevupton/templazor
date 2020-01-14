@@ -1,4 +1,4 @@
-import { logics } from './logics';
+import { logics } from './logics/index';
 import { Scope, ScopeObject } from './scope';
 
 export class Templazor {
