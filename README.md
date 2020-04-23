@@ -1,15 +1,16 @@
-# 🚀 Welcome to your new awesome project!
+# Templazor
 
-This project has been created using **webpack scaffold**, you can now run
+Webpack templating functionality useful for any type of file.
 
-```
-npm run build
-```
+Can be used in Typescript, Sass, or even HTML. 
 
-or
+## Commands
 
-```
-yarn build
-```
+#### @if
 
-to bundle your application
+#### @foreach
+
+#### #{}
+
+#### #""
+
